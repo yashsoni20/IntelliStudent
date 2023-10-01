@@ -1,7 +1,8 @@
 // InboxStack.js
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import LibraryScreen from '../screens/AppScreens/Library';
+import LibraryS from '../screens/AppScreens/LibraryScreens/Library';
+
 
 const Stack = createStackNavigator();
 
@@ -9,9 +10,9 @@ const LibraryStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
-        name="LibraryStackLibrary" // Rename to "InboxStackHome" to make it unique
-        component={LibraryScreen}
-        options={{ title: 'Library' }}
+        name="LibraryS"
+        component={LibraryS}
+        options={{ title: 'LibraryS' }}
       />
       {/* Add other screens related to the "Home" tab */}
     </Stack.Navigator>

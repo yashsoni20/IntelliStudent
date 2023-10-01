@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function SettingScreen() {
+export default function Upgrade() {
   return (
     <View>
-      <Text>Setting</Text>
+      <Text>Upgrade</Text>
     </View>
   )
 }

@@ -22,15 +22,114 @@ const gradientColors = {
   Chemistry: ['#FFC226', '#2A0087'],
 };
 
+const topicsData = {
+  All: [
+    {
+      name: '01 Topic',
+      heading: 'Trigonometry heading 01',
+      paragraph: 'Demo data for Topic 01 paragraph',
+      // Add more fields as needed
+    },
+    {
+      name: '02 Topic',
+      heading: 'Trigonometry heading 02',
+      paragraph: 'Demo data for Topic 02 paragraph',
+      // Add more fields as needed
+    },
+    {
+      name: '03 Topic',
+      heading: 'Trigonometry heading 03',
+      paragraph: 'Demo data for Topic 03 paragraph',
+      // Add more fields as needed
+    },
+  ],
+  Mathematics: [
+    {
+      name: 'Sessions',
+      heading: 'Sessions heading',
+      paragraph: 'Demo data for Sessions paragraph',
+      // Add more fields as needed
+    },
+    {
+      name: 'Assignments',
+      heading: 'Assignments heading',
+      paragraph: 'Demo data for Assignments paragraph',
+      // Add more fields as needed
+    },
+    {
+      name: 'Examinations',
+      heading: 'Examinations heading',
+      paragraph: 'Demo data for Examinations paragraph',
+      // Add more fields as needed
+    },
+  ],
+  Physics: [
+    {
+      name: 'Topic X',
+      heading: 'Topic X heading',
+      paragraph: 'Demo data for Topic X paragraph',
+      // Add more fields as needed
+    },
+    {
+      name: 'Topic Y',
+      heading: 'Topic Y heading',
+      paragraph: 'Demo data for Topic Y paragraph',
+      // Add more fields as needed
+    },
+    {
+      name: 'Topic Z',
+      heading: 'Topic Z heading',
+      paragraph: 'Demo data for Topic Z paragraph',
+      // Add more fields as needed
+    },
+  ],
+  Chemistry: [
+    {
+      name: 'Topic P',
+      heading: 'Topic P heading',
+      paragraph: 'Demo data for Topic P paragraph',
+      // Add more fields as needed
+    },
+    {
+      name: 'Topic Q',
+      heading: 'Topic Q heading',
+      paragraph: 'Demo data for Topic Q paragraph',
+      // Add more fields as needed
+    },
+    {
+      name: 'Topic R',
+      heading: 'Topic R heading',
+      paragraph: 'Demo data for Topic R paragraph',
+      // Add more fields as needed
+    },
+  ],
+};
 
-const LibraryScreen = ({ navigation }) => {
+
+const LibraryS = ({ navigation }) => {
   const [selectedSubject, setSelectedSubject] = useState('All');
+  const [selectedTopic, setSelectedTopic] = useState(null);
+
+  const [expandedTopic, setExpandedTopic] = useState(null);
 
   const filterCards = () => {
     if (selectedSubject === 'All') {
       return cardsData;
     } else {
       return cardsData.filter((card) => card.subject === selectedSubject);
+    }
+  };
+
+  const filterTopics = () => {
+    if (selectedSubject === 'All') {
+      // Show all topics when "All" is selected
+      const allTopics = [];
+      Object.keys(topicsData).forEach((subject) => {
+        allTopics.push(...topicsData[subject]);
+      });
+      return allTopics;
+    } else {
+      return topicsData[selectedSubject];
     }
   };
 
@@ -87,55 +186,59 @@ const LibraryScreen = ({ navigation }) => {
             <View style={{ backgroundColor: 'orange', borderRadius: 10, margin: 10, padding: 10, width: '45%' }}>
               <Text style={{ color: '#250075', fontWeight: 'bold', fontSize: 16 }}>Projects</Text>
               <Text style={{ color: '#6544F2', fontWeight: 'bold', fontSize: 24, marginTop: 20 }}>05</Text>
-              <Image source={require('../../assets/DashBoard/Rectangle.png')} style={{ position: 'absolute', width: 60, height: 80, resizeMode: 'contain', bottom: 0, right: 0 }} />
+              <Image source={require('../../../assets/DashBoard/Rectangle.png')} style={{ position: 'absolute', width: 60, height: 80, resizeMode: 'contain', bottom: 0, right: 0 }} />
             </View>
             <View style={{ backgroundColor: 'lightgreen', borderRadius: 10, margin: 10, padding: 10, width: '45%' }}>
               <Text style={{ color: '#250075', fontWeight: 'bold', fontSize: 16 }}>Current Task</Text>
               <Text style={{ color: '#6544F2', fontWeight: 'bold', fontSize: 24, marginTop: 20 }}>05</Text>
-              <Image source={require('../../assets/Start/pose1.png')} style={{ position: 'absolute', width: 50, height: 80, resizeMode: 'contain', bottom: 0, right: 0 }} />
+              <Image source={require('../../../assets/Start/pose1.png')} style={{ position: 'absolute', width: 50, height: 80, resizeMode: 'contain', bottom: 0, right: 0 }} />
             </View>
 
           </View>
-          {/* Comment For Sorting Cards */}
-          {/* <View>
-            {filterCards().map((card, index) => (
-              <LinearGradient
-                colors={gradientColors[card.subject]}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 0 }}
-                key={index}
-                style={styles.CourseCard}>
-                <Text style={styles.CourseCardTitle}>{card.title}</Text>
-                <View style={{ flexDirection: 'row', marginBottom: 10 }}>
-                  <View>
-                    <Text style={{ color: '#250075', fontWeight: 'bold', fontSize: 12 }}>Sessions</Text>
-                    <Text style={{ color: '#6544F2', fontWeight: 'bold', fontSize: 24 }}>05</Text>
-                  </View>
-                </View>
-                <Text style={{ color: 'white', fontSize: 14 }}>Lecture by Sahil Verma</Text>
-                <Image source={require('../../assets/DashBoard/Rectangle.png')} style={{ position: 'absolute', width: 100, height: 150, resizeMode: 'contain', bottom: 0, right: 0 }} />
-
-              </LinearGradient>
-            ))}
-          </View> */}
 
           {/* Topics */}
-        <View>
-          <TouchableOpacity style={{ flexDirection:'row',justifyContent:'space-between',alignItems:'center',backgroundColor: 'lightgray', alignContent: 'center', paddingHorizontal: 20, paddingVertical: 20, borderRadius: 10, margin: 10 }}>
-            <Text style={{fontSize:16,fontWeight:'bold'}}>01 Topic</Text>
-            <Ionicons name={'chevron-forward'} size={24}/>
-          </TouchableOpacity>
-          
-          <TouchableOpacity style={{ flexDirection:'row',justifyContent:'space-between',alignItems:'center',backgroundColor: 'lightgray', alignContent: 'center', paddingHorizontal: 20, paddingVertical: 20, borderRadius: 10, margin: 10 }}>
-            <Text style={{fontSize:16,fontWeight:'bold'}}>02 Topic</Text>
-            <Ionicons name={'chevron-forward'} size={24}/>
-          </TouchableOpacity>
-          
-          <TouchableOpacity style={{ flexDirection:'row',justifyContent:'space-between',alignItems:'center',backgroundColor: 'lightgray', alignContent: 'center', paddingHorizontal: 20, paddingVertical: 20, borderRadius: 10, margin: 10 }}>
-            <Text style={{fontSize:16,fontWeight:'bold'}}>03 Topic</Text>
-            <Ionicons name={'chevron-forward'} size={24}/>
-          </TouchableOpacity>
-        </View>
+          <View>
+            {filterTopics().map((topic, index) => (
+              <View key={topic.name}>
+                <TouchableOpacity
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    backgroundColor: 'lightgray',
+                    alignContent: 'center',
+                    paddingHorizontal: 20,
+                    paddingVertical: 20,
+                    borderRadius: 10,
+                    margin: 10,
+                  }}
+                  onPress={() => setExpandedTopic(expandedTopic === topic.name ? null : topic.name)}
+                >
+                  <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{topic.name}</Text>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+                    <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#6B4EFF' }}>23 hrs</Text>
+                    <Ionicons name={expandedTopic === topic.name ? 'chevron-up' : 'chevron-down'} size={24} />
+                  </View>
+                </TouchableOpacity>
+                {expandedTopic === topic.name && (
+                  <View style={{ padding: 20, backgroundColor: 'white', borderRadius: 10, marginHorizontal: 10, borderBottomWidth: 1, borderColor: 'gray' }}>
+                    <TouchableOpacity style={{ flexDirection: 'row', gap: 10 ,width:'100%'}}>
+                      <View style={{ width: 140, height: 80, backgroundColor: 'rgba(0,0,0,0.8)', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                        <View style={{ backgroundColor: '#6B4EFF', width: 40, height: 40, borderRadius: 50, justifyContent: 'center', alignItems: 'center' }}>
+                          <Ionicons name={'play-outline'} style={{marginLeft:5}} color={'white'} size={24} />
+                        </View>
+                      </View>
+                      <View style={{width:170}}>
+                        <Text style={{ color: '#2A0087', fontSize: 15, fontWeight: '500', marginVertical: 8 }}>{topic.heading}</Text>
+                        <Text style={{ color: '#2A0087', fontSize: 14 }}>{topic.paragraph}</Text>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+                )}
+
+              </View>
+            ))}
+          </View>
         </View>
 
       </ScrollView>
@@ -243,7 +346,6 @@ const styles = StyleSheet.create({
     color: '#333333',
     fontWeight: 'bold',
     fontSize: 20
-
   },
 
   CourseCard: {
@@ -262,4 +364,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default LibraryScreen;
+export default LibraryS;

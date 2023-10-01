@@ -109,7 +109,7 @@ const HomeScreen = () => {
               <TouchableOpacity style={{ borderRadius: 10, backgroundColor: 'white', position: 'absolute', top: 20, right: 20, paddingVertical: 8, paddingHorizontal: 15 }}>
                 <Text>Reschedule</Text>
               </TouchableOpacity>
-              <Image source={require('../../assets/Start/pose1.png')} style={{ position: 'absolute', width: 100, height: 150, resizeMode: 'contain', bottom: 0, right: 0 }} />
+              <Image source={require('../../../assets/Start/pose1.png')} style={{ position: 'absolute', width: 100, height: 150, resizeMode: 'contain', bottom: 0, right: 0 }} />
 
             </LinearGradient>
 
@@ -139,7 +139,7 @@ const HomeScreen = () => {
               <TouchableOpacity style={{ borderRadius: 10, backgroundColor: 'white', position: 'absolute', top: 20, right: 20, paddingVertical: 8, paddingHorizontal: 15 }}>
                 <Text>Reschedule</Text>
               </TouchableOpacity>
-              <Image source={require('../../assets/Start/pose1.png')} style={{ position: 'absolute', width: 100, height: 150, resizeMode: 'contain', bottom: 0, right: 0 }} />
+              <Image source={require('../../../assets/Start/pose1.png')} style={{ position: 'absolute', width: 100, height: 150, resizeMode: 'contain', bottom: 0, right: 0 }} />
 
             </LinearGradient>
 
@@ -169,7 +169,7 @@ const HomeScreen = () => {
               <TouchableOpacity style={{ borderRadius: 10, backgroundColor: 'white', position: 'absolute', top: 20, right: 20, paddingVertical: 8, paddingHorizontal: 15 }}>
                 <Text>Reschedule</Text>
               </TouchableOpacity>
-              <Image source={require('../../assets/Start/pose1.png')} style={{ position: 'absolute', width: 100, height: 150, resizeMode: 'contain', bottom: 0, right: 0 }} />
+              <Image source={require('../../../assets/Start/pose1.png')} style={{ position: 'absolute', width: 100, height: 150, resizeMode: 'contain', bottom: 0, right: 0 }} />
 
             </LinearGradient>
 
@@ -199,7 +199,7 @@ const HomeScreen = () => {
               <TouchableOpacity style={{ borderRadius: 10, backgroundColor: 'white', position: 'absolute', top: 20, right: 20, paddingVertical: 8, paddingHorizontal: 15 }}>
                 <Text>Reschedule</Text>
               </TouchableOpacity>
-              <Image source={require('../../assets/Start/pose1.png')} style={{ position: 'absolute', width: 100, height: 150, resizeMode: 'contain', bottom: 0, right: 0 }} />
+              <Image source={require('../../../assets/Start/pose1.png')} style={{ position: 'absolute', width: 100, height: 150, resizeMode: 'contain', bottom: 0, right: 0 }} />
 
             </LinearGradient>
           </ScrollView>
@@ -254,7 +254,7 @@ const HomeScreen = () => {
                   </View>
                 </View>
                 <Text style={{ color: 'white', fontSize: 14 }}>Lecture by Sahil Verma</Text>
-                <Image source={require('../../assets/DashBoard/Rectangle.png')} style={{ position: 'absolute', width: 100, height: 150, resizeMode: 'contain', bottom: 0, right: 0 }} />
+                <Image source={require('../../../assets/DashBoard/Rectangle.png')} style={{ position: 'absolute', width: 100, height: 150, resizeMode: 'contain', bottom: 0, right: 0 }} />
 
               </LinearGradient>
             ))}
